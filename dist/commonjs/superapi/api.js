@@ -51,7 +51,7 @@ var serviceHandler = function(sid) {
       req.end(callback ? callback : function (err, res) {
         var error = err || res.error;
         if (error) {
-          return failure(error);
+          return failure(res, error);
         }
 
         success(res);
